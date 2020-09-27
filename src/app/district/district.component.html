@@ -1,0 +1,35 @@
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div *ngIf=hhh> Sort By :
+            <select name="sort" (click)="sort(ref.value)" #ref>
+                
+                <option value="name">district</option>
+                <option value="confirmed">confirmed</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <table class="table table-bordered bg-warning">
+            <thead>                  
+                <th>Name</th>
+                
+                <th>Confimed Cases</th>
+            </thead>
+            <tr *ngFor="let n of hhh">
+                <td>{{n.name}}</td>
+                
+                <td>{{n.confirmed}}</td>
+            </tr>
+        
+        </table>
+        
+    </div>
+    <div class="col-sm-1"></div>
+</div>

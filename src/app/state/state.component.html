@@ -1,0 +1,47 @@
+
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div *ngIf=h>sort by :
+            <select name="sort" (click)="sort(ref.value)" #ref>
+                
+                <option value="state">state</option>
+                <option value="active">Active</option>
+                <option value="confimed">confimed</option>
+                <option value="recovered">Recovery</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <table class="table table-bordered bg-info" id="x" >
+                <thead>                  
+                    <th>State ID</th>
+                    <th>Name</th>
+                    <th>Active Cases</th>
+                    <th>Confimed Cases</th>
+                    <th>Recovery Cases</th>
+                    <th>details</th>
+                </thead>
+                <tr *ngFor="let hr of h" class="y" >
+                    <td>{{hr.id}}</td>
+                    <td>{{hr.state}}</td>
+                    <td>{{hr.active}}</td>
+                    <td>{{hr.confirmed}}</td>
+                    <td>{{hr.recovered}}</td>
+                    <td> <button (click)="details(hr.districtData)">District wise details</button> </td>
+                </tr>
+            
+            </table>
+            
+        </div>
+        <div class="col-sm-1" ></div>
+    </div>
+</div>
+
+ 
